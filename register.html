@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="register.css" type="text/css">
+    <title>Register</title>
+</head>
+
+<body>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-database.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBKiCV0CbC4IBdILJMtxlV5tbHCxiwjrKI",
+            authDomain: "fitify-7daf8.firebaseapp.com",
+            databaseURL: "https://fitify-7daf8.firebaseio.com",
+            projectId: "fitify-7daf8",
+            storageBucket: "fitify-7daf8.appspot.com",
+            messagingSenderId: "724801154995",
+            appId: "1:724801154995:web:20d96734b46705c7bf65c6"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="register.js"></script>
+
+    <main>
+
+        <h1>
+            Create Account
+        </h1>
+        <div id="Register">
+            <label> First Name: </label>
+            <input type="text" name="first-name" value="">
+
+            <label> Last Name: </label>
+            <input type="text" name="last-name" value="">
+
+            <label> Email: </label>
+            <input type="text" name="email" value="" pattern="[A-Za-z0-9._-]+@[a-z0-9.-]+\.[a-z]">
+
+            <label> Password: </label>
+            <input type="password" name="password" value="" pattern="[A-Za-z0-9]{6}">
+
+            <label> Confirm Your Password: </label>
+            <input type="password" name="confirm" value="">
+
+            <button onclick="Submit()">Submit</button>
+        </div>
+
+    </main>
+
+</body>
+
+</html>
