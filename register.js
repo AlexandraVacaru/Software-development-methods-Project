@@ -7,6 +7,18 @@ function User(firstName, lastName, email, password) {
     })
 }
 
+function Check() {
+    if(document.getElementsByName('password')[0].value ==
+    document.getElementsByName('confirm')[0].value) {
+        document.getElementById('message').style.color = 'green'
+        document.getElementById('message').innerHTML = 'matching'
+    }
+    else{
+        document.getElementById('message').style.color = 'red'
+        document.getElementById('message').innerHTML = 'not matching'
+    }
+}
+
 function Submit() {
     var firstName = document.getElementsByName('first-name')[0].value
     var lastName = document.getElementsByName('last-name')[0].value
@@ -14,8 +26,8 @@ function Submit() {
     var password = document.getElementsByName('password')[0].value
     var confirmPassword = document.getElementsByName('confirm')[0].value
 
-    if (confirmPassword !== password) {
-        confirmPassword.setCustomValidity('Password do not match.')
+    if(password !== confirmPassword) {
+        alertify.alert('Passwords not matching!')
         return
     }
 
@@ -23,9 +35,9 @@ function Submit() {
         var errorCode = error.code
         var errorMessage = error.message
         if (errorCode == 'auth/weak-password') {
-            alert('The password is too weak.')
+            alertify.alert('The password is too weak.')
         } else {
-            alert(errorMessage)
+            alertify.alert(errorMessage)
         }
         console.log(error)
     })

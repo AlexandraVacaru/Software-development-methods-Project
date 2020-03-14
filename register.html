@@ -4,11 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
     <link rel="stylesheet" href="register.css" type="text/css">
     <title>Register</title>
 </head>
 
 <body>
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
@@ -37,21 +42,22 @@
         </h1>
         <div id="Register">
             <label> First Name: </label>
-            <input type="text" name="first-name" value="">
+            <input type="text" name="first-name" value="" required>
 
             <label> Last Name: </label>
-            <input type="text" name="last-name" value="">
+            <input type="text" name="last-name" value="" required>
 
             <label> Email: </label>
-            <input type="text" name="email" value="" pattern="[A-Za-z0-9._-]+@[a-z0-9.-]+\.[a-z]">
+            <input type="text" name="email" value="" pattern="[A-Za-z0-9._-]+@[a-z0-9.-]+\.[a-z]" required>
 
             <label> Password: </label>
-            <input type="password" name="password" value="" pattern="[A-Za-z0-9]{6}">
+            <input type="password" name="password" value="" pattern="[A-Za-z0-9]{6}" required>
 
             <label> Confirm Your Password: </label>
-            <input type="password" name="confirm" value="">
+            <input type="password" name="confirm" value="" required onkeyup="Check()">
+            <span id="message"></span>
 
-            <button onclick="Submit()">Submit</button>
+            <button onclick="Submit()" id="submit">Submit</button>
         </div>
 
     </main>
