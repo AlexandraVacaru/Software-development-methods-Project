@@ -1,4 +1,4 @@
-/*var firebaseConfig = {
+var firebaseConfig = {
     apiKey: "AIzaSyBNGSaU8suxm9TijMnnuQhf5_F5EYhD15c",
     authDomain: "fb-test-7fa0e.firebaseapp.com",
     databaseURL: "https://fb-test-7fa0e.firebaseio.com",
@@ -9,7 +9,7 @@
     measurementId: "G-51XWRDLY73"
 };
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);*/
+firebase.initializeApp(firebaseConfig);
 
 function addTask(){
     

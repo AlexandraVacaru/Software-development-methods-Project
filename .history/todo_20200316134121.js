@@ -9,7 +9,7 @@
     measurementId: "G-51XWRDLY73"
 };
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);*/
+firebase.initializeApp(firebaseConfig);
 
 function addTask(){
     
