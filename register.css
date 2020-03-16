@@ -2,43 +2,96 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    transition: all 250ms ease;
 }
 
 html {
     scroll-behavior: smooth;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
+:root {
+    --main-font: Quicksand;
 }
 
-#Register {
+body {
+    font-family: var(--main-font);
+}
+
+#title {
+    font-size: 45px;
+    margin-bottom: 25px;
+}
+
+#register {
+    position: absolute;
+    width: 60%;
+    height: 70%;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    color: gray;
+    padding: 20px;
+}
+
+#user-info,
+#user-form {
+    width: 50%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+}
+
+#user-info {
+    float: left;
+}
+
+#user-info input {
+    margin-top: 30px;
+}
+
+#user-form {
+    float: right;
+}
+
+input, select {
     border: 1px solid gray;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 7px 0;
+}
+
+input::placeholder, select {
+    color: rgb(190, 190, 190);
+}
+
+option {
     color: gray;
-    padding: 20px;
 }
 
-input, label {
-    padding: 10px;
-}
-
-input {
-    border: 1px solid gray;
-    padding: 10px;
+input:focus, 
+button:focus,
+select:focus {
+    outline: none;
 }
 
 #submit {
-    background-color: transparent;
-    text-transform: uppercase;
+    background-color: rgb(0, 191, 255);
+    color: white;
+    padding: 15px;
     margin-top: 10px;
-    color: gray;
+    border-radius: 10px;
+    border: none;
+    width: 20%;
+    position: absolute;
+    bottom: 0;
+    transform: translateX(-50%);
+    cursor: pointer;
+    font-family: var(--main-font);
+}
+
+#submit:hover {
+    box-shadow: 3px 3px 10px rgb(225, 225, 225);
 }

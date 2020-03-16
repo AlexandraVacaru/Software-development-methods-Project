@@ -1,46 +1,47 @@
-function User(firstName, lastName, email, password) {
+function User(firstName, lastName, email, password, height, weight, age, gender, freeTime, exercisePerWeek) {
     return ({
         firstName: firstName,
         lastName: lastName,
         email: email,
-        password: password
+        password: password,
+        height: height,
+        weight: weight,
+        age: age,
+        gender: gender,
+        freeTime: freeTime,
+        exercisePerWeek: exercisePerWeek
     })
 }
 
-function Check() {
-    if(document.getElementsByName('password')[0].value ==
-    document.getElementsByName('confirm')[0].value) {
-        document.getElementById('message').style.color = 'green'
-        document.getElementById('message').innerHTML = 'matching'
-    }
-    else{
-        document.getElementById('message').style.color = 'red'
-        document.getElementById('message').innerHTML = 'not matching'
-    }
-}
+function submit() {
+    var firstName = document.getElementById('first-name').value
+    var lastName = document.getElementById('last-name').value
+    var email = document.getElementById('email').value
+    var password = document.getElementById('password').value
 
-function Submit() {
-    var firstName = document.getElementsByName('first-name')[0].value
-    var lastName = document.getElementsByName('last-name')[0].value
-    var email = document.getElementsByName('email')[0].value
-    var password = document.getElementsByName('password')[0].value
-    var confirmPassword = document.getElementsByName('confirm')[0].value
+    var height = document.getElementById('height').value
+    var weight = document.getElementById('weight').value
+    var age = document.getElementById('age').value
 
-    if(password !== confirmPassword) {
-        alertify.alert('Passwords not matching!')
-        return
+    var gender = document.getElementsByName('gender')
+    if(gender[0].checked) {
+        gender = 'male'
+    } else {
+        gender = 'female'
     }
+
+    var freeTime = document.getElementById('free-time')
+    freeTime = freeTime.options[freeTime.selectedIndex].value
+
+    var exercisePerWeek = document.getElementById('exercise-per-week')
+    exercisePerWeek = exercisePerWeek.options[exercisePerWeek.selectedIndex].value
 
     firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
         var errorCode = error.code
         var errorMessage = error.message
-        if (errorCode == 'auth/weak-password') {
-            alertify.alert('The password is too weak.')
-        } else {
-            alertify.alert(errorMessage)
-        }
-        console.log(error)
     })
 
-    firebase.database().ref('users/' + firstName + lastName).set(User(firstName, lastName, email, password))
+    firebase.database().ref('users/' + firstName + ' ' + lastName).set(User(
+        firstName, lastName, email, password, 
+        height, weight, age, gender, freeTime, exercisePerWeek))
 }
