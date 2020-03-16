@@ -20,9 +20,11 @@ firebase.auth().onAuthStateChanged(function(user) {
 
     } else {
       // No user is signed in.
+        window.alert("You're not logged in!");
         document.getElementById("content_container").style.display = "none";
         document.getElementById("user_div").style.display = "block";
-        document.getElementById("user_logout").style.display ="none";
+        document.getElementById("user_logout").style.display ="block";
+
     }
   });
 
@@ -224,8 +226,4 @@ function taskDelete(task){
 
     //remove from html
     task.remove();
-}
-
-function logout() {
-    firebase.auth().signOut();
 }

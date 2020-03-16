@@ -225,7 +225,3 @@ function taskDelete(task){
     //remove from html
     task.remove();
 }
-
-function logout() {
-    firebase.auth().signOut();
-}

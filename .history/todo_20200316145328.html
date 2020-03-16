@@ -26,6 +26,8 @@
         firebase.initializeApp(firebaseConfig);
     </script>
     <script src="todo.js"></script>
+    <script src="index.js"></script>
+
 </head>
 
 <body onload = "createTask(),create_finished_task()">
@@ -82,13 +84,10 @@
 
     </div>
 
-    <div id="user_div">
-        <p>You're currently not logged in! </p>
-        <a href="index.html" >Login now!</a>
-    </div>
-    <div id="user_logout">
-        <button onclick="logout()">Logout</button>
-    </div>
+    <div id="user_div"></div>
+    <p id="user_para">You're currently not logged in! </p>
+    <a href="index.html" id="user_button">Login now!</a>
+    <button onclick="logout()">Logout</button>
 
 </body>
 
