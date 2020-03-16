@@ -1,0 +1,67 @@
+<html>
+
+<head>
+    <title>To Do List</title>
+    <!--link rel="stylesheet" href="todo.css" type="text/css"-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="todo.js"></script>
+</head>
+
+<body onload = "createTask(),create_finished_task()">
+
+    <div id="content_container">
+        <div id="finish_task_header">
+           <p>Finish Task.</p> 
+        </div>
+
+        <div id="tast_input_container">
+            <input type="text" placeholder="Enter task" id="input_box"/>
+            <button onclick="addTask()" id="input_button">Add Task</button>
+        </div>
+
+        <p class="header">Tasks</p>
+        <div class="container">
+            <!--div class="task_container">
+                <div id="task_data">
+                    <p id="task_title" contenteditable="false">Task 1</p>
+                </div>
+                <div id="task_tool">
+                    <button id="task_done_button" onclick="taskDone();"><i class="fa fa-check"></i></button>
+                    <button id="task_edit_button" onclick="taskEdit();"><i class="fa fa-pencil"></i></button>
+                    <button id="task_delete_button" onclick="taskDelete();"><i class="fa fa-trash"></i></button>
+                </div>
+            </!--div>
+            <div class="task_container">
+                <div id="task_data">
+                    <p id="task_title" contenteditable="false">Task 1</p>
+                </div>
+                <div id="task_tool">
+                    <button id="task_done_button" onclick="taskDone();"><i class="fa fa-check"></i></button>
+                    <button id="task_edit_button" onclick="taskEdit();"><i class="fa fa-pencil"></i></button>
+                    <button id="task_delete_button" onclick="taskDelete();"><i class="fa fa-trash"></i></button>
+                </div>
+            </div-->
+        </div>
+
+        <p class="header">Finished Tasks</p>
+        <div class="container">
+            <!--div class="task_container">
+                <div id="task_data">
+                    <p id="task_title" contenteditable="false">Task 1</p>
+                </div>
+            </!--div>
+            <div class="task_container">
+                <div id="task_data">
+                    <p id="task_title" contenteditable="false">Task 1</p>
+                </div>
+            </div-->
+        </div>
+
+
+
+    </div>
+
+</body>
+
+</html>
