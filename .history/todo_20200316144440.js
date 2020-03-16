@@ -15,13 +15,12 @@ firebase.auth().onAuthStateChanged(function(user) {
       // User is signed in.
         document.getElementById("content_container").style.display = "block";
         document.getElementById("user_para").style.display = "none";
-        document.getElementById("user_button").style.display = "none";
+        document.getElementById("user_button").style.display = "block";
         
 
     } else {
       // No user is signed in.
         window.alert("You're not logged in!");
-        document.getElementById("content_container").style.display = "none";
         document.getElementById("user_para").style.display = "block";
         document.getElementById("user_button").style.display = "block";
 
