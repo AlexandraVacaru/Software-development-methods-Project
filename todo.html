@@ -28,7 +28,7 @@
     <script src="todo.js"></script>
 </head>
 
-<body onload = "createTask(),create_finished_task()">
+<body> 
 
     <div id="content_container">
         <div id="finish_task_header">
@@ -41,6 +41,7 @@
         </div>
 
         <p class="header">Tasks</p>
+        <button onclick="create_unfinished_task();">Show tasks</button>
         <div class="container">
             <!--div class="task_container">
                 <div id="task_data">
@@ -65,6 +66,7 @@
         </div>
 
         <p class="header">Finished Tasks</p>
+        <button onclick="create_finished_task();">Show finished tasks</button>
         <div class="container">
             <!--div class="task_container">
                 <div id="task_data">

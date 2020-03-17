@@ -1,4 +1,5 @@
-firebase.auth().onAuthStateChanged(function(user) {
+window.onload = function(){
+    firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
         document.getElementById("content_container").style.display = "block";
@@ -13,34 +14,53 @@ firebase.auth().onAuthStateChanged(function(user) {
         document.getElementById("user_logout").style.display ="none";
     }
   });
+}
 
 function addTask(){
     
     input_box = document.getElementById("input_box");
     
+    var uid = firebase.auth().currentUser.uid;
+    var u = Object.values(uid);
+    var uid = "";
+    for(var i = 0; i < u.length; i++)
+    {
+        uid = uid + u[i];
+    }
+    //console.log(uid);
+
     if(input_box.value.length !=0){
         
-        var key = firebase.database().ref().child("unfinished_task").push().key; 
+        var key = firebase.database().ref().child("users/" + uid + "/unfinished_tasks/").push().key; 
         var task = {
             title: input_box.value,
             key : key
         }
         var updates = {};
-        updates["/unfinished_task/" + key] = task;
+        updates["users/" + uid +"/unfinished_tasks/" + key] = task;
         firebase.database().ref().update(updates);
-        createTask();
+        create_unfinished_task();
     }
 
 }
 
-function createTask(){
+function create_unfinished_task(){
+
+
     task_container = document.getElementsByClassName("container")[0];
 
     
+    var uid = firebase.auth().currentUser.uid;
+    var u = Object.values(uid);
+    var uid = "";
+    for(var i = 0; i < u.length; i++)
+    {
+        uid = uid + u[i];
+    }
     task_container.innerHTML = "";
 
     task_array = [];
-    firebase.database().ref("unfinished_task").once('value',function(snapshot){
+    firebase.database().ref("users/" + uid + "/unfinished_tasks/").once('value',function(snapshot){
         snapshot.forEach(function(childSnapshot){
             var childData = childSnapshot.val();
             task_array.push(Object.values(childData));
@@ -112,9 +132,17 @@ function create_finished_task(){
     
     f_task_container.innerHTML = "";
 
+    var uid = firebase.auth().currentUser.uid;
+    var u = Object.values(uid);
+    var uid = "";
+    for(var i = 0; i < u.length; i++)
+    {
+        uid = uid + u[i];
+    }
+
     task2_array = [];
     
-    firebase.database().ref("finished_task").once('value',function(snapshot){
+    firebase.database().ref("users/" + uid + "/finished_tasks/").once('value',function(snapshot){
         snapshot.forEach(function(childSnapshot){
             var childData = childSnapshot.val();
             task2_array.push(Object.values(childData));
@@ -166,8 +194,16 @@ function taskDone(task,task_tool){
         title: task.childNodes[0].childNodes[0].innerHTML,
         key : key
     }
+
+    var uid = firebase.auth().currentUser.uid;
+    var u = Object.values(uid);
+    var uid = "";
+    for(var i = 0; i < u.length; i++)
+    {
+        uid = uid + u[i];
+    }
     var updates = {};
-    updates["/finished_task/" + key] = task_obj;
+    updates["users/" + uid + "/finished_tasks/" + key] = task_obj;
     firebase.database().ref().update(updates);
 
 
@@ -192,22 +228,39 @@ function finish_edit(task,edit_button){
     title.setAttribute("contenteditable",false);
 
     //change in firebase
+
+    var uid = firebase.auth().currentUser.uid;
+    var u = Object.values(uid);
+    var uid = "";
+    for(var i = 0; i < u.length; i++)
+    {
+        uid = uid + u[i];
+    }
+
     var key = task.getAttribute("data-key");
-    firebase.database().ref().child("unfinished_task").child(key).remove(); 
+    firebase.database().ref().child("users/" + uid + "/unfinished_tasks/").child(key).remove(); 
     var task_obj = {
         title: task.childNodes[0].childNodes[0].innerHTML,
         key : key
     }
     var updates = {};
-    updates["/unfinished_task/" + key] = task_obj;
+    updates["users/" + uid + "/unfinished_tasks/" + key] = task_obj;
     firebase.database().ref().update(updates);
 
 }
 
 
 function taskDelete(task){
+
+    var uid = firebase.auth().currentUser.uid;
+    var u = Object.values(uid);
+    var uid = "";
+    for(var i = 0; i < u.length; i++)
+    {
+        uid = uid + u[i];
+    }
     key = task.getAttribute("data-key");
-    task_to_remove = firebase.database().ref("unfinished_task/" + key);
+    task_to_remove = firebase.database().ref("users/" + uid + "/unfinished_tasks/" + key);
     task_to_remove.remove();
 
     //remove from html

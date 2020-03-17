@@ -1,4 +1,4 @@
-function User(firstName, lastName, email, password, height, weight, age, gender, freeTime, exercisePerWeek) {
+function User(firstName, lastName, email, password, height, weight, age, gender, freeTime, exercisePerWeek,uid) {
     return ({
         firstName: firstName,
         lastName: lastName,
@@ -9,7 +9,8 @@ function User(firstName, lastName, email, password, height, weight, age, gender,
         age: age,
         gender: gender,
         freeTime: freeTime,
-        exercisePerWeek: exercisePerWeek
+        exercisePerWeek: exercisePerWeek,
+        uid : uid
     })
 }
 
@@ -36,12 +37,26 @@ function submit() {
     var exercisePerWeek = document.getElementById('exercise-per-week')
     exercisePerWeek = exercisePerWeek.options[exercisePerWeek.selectedIndex].value
 
-    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
+    /*firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
         var errorCode = error.code
         var errorMessage = error.message
-    })
+    })*/
 
-    firebase.database().ref('users/' + firstName + ' ' + lastName).set(User(
+    
+    
+        firebase.auth().createUserWithEmailAndPassword(email, password).then(function (userCreds) {
+            console.log(userCreds.user.uid);
+            firebase.database().ref('users/' + userCreds.user.uid).set(User(
+                firstName, lastName, email, password, 
+                height, weight, age, gender, freeTime, exercisePerWeek,userCreds.user.uid))
+            })
+
+    
+
+    /*firebase.database().ref('users/' + firstName + ' ' + lastName).set(User(
         firstName, lastName, email, password, 
         height, weight, age, gender, freeTime, exercisePerWeek))
+
+        var uid = firebase.auth().currentUser.uid;
+        console.log(uid);*/
 }
