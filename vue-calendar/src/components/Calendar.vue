@@ -140,8 +140,33 @@
 </v-row>
 </template>
 
+<script src="scripts/auth.js"></script>
+<script src="scripts/index.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-database.js"></script>
+
 <script>
+
 import { db } from '@/main' // index.html
+import { auth } from '@/main'
+// $http.get('api/user').then(response => {
+//    console.log(response.body);
+// })
+//console.log(uid);
+
+
+// let user = auth().currentUser;    
+// console.log(user);
+// if (user) {
+//     console.log(db.collection("users").doc(user.uid))
+// } else {
+//     alert('user not logged in')
+// }
+
 export default {
   data: () => ({
     today: new Date().toISOString().substr(0, 10),
@@ -202,6 +227,7 @@ export default {
   },
   methods: {
     async getEvents () {
+      //let snapshot = await db.collection('users').doc(user.uid).collection('CalendarEvent').get()
       let snapshot = await db.collection('calEvents').get()
       const events = []
       snapshot.forEach(doc => {
@@ -233,7 +259,8 @@ export default {
     },
     async addEvent () {
       if (this.name && this.start && this.end) {
-        await db.collection("calEvents").add({
+        //await db.collection('users').doc(user.uid).collection('CalendarEvent').add({
+        await db.collection('calEvents').add({  
           name: this.name,
           details: this.details,
           start: this.start,
@@ -254,14 +281,16 @@ export default {
       this.currentlyEditing = ev.id
     },
     async updateEvent (ev) {
-      await db.collection('calEvents').doc(this.currentlyEditing).update({
+      //await db.collection('users').doc(user.uid).collection('CalendarEvent').doc(this.currentlyEditing).update({
+      await db.collection('calEvents').doc(this.currentlyEditing).update({  
         details: ev.details
       })
       this.selectedOpen = false,
       this.currentlyEditing = null
     },
     async deleteEvent (ev) {
-      await db.collection("calEvents").doc(ev).delete()
+      //await db.collection('users').doc(user.uid).collection('CalendarEvent').doc(ev).delete()
+      await db.collection('calEvents').doc(ev).delete()
       this.selectedOpen = false,
       this.getEvents()
     },

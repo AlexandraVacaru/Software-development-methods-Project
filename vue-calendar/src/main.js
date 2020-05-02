@@ -4,6 +4,7 @@ import vuetify from './plugins/vuetify';
 import VueTextareaAutosize from 'vue-textarea-autosize';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
+import 'firebase/auth';
 
 Vue.use(VueTextareaAutosize);
 Vue.config.productionTip = false
@@ -19,7 +20,9 @@ firebase.initializeApp({
 });
 
 export const db = firebase.firestore();
-
+//export const user = firebase.auth().currentUser;
+export const auth = firebase.auth();
+// export const functions = firebase.functions();
 new Vue({
   vuetify,
   render: h => h(App)

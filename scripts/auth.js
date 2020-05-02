@@ -17,6 +17,7 @@ auth.onAuthStateChanged(user => {
       user.admin = idTokenResult.claims.admin;
       setupUI(user);
     });
+    
     db.collection('guides').onSnapshot(snapshot => {
       setupGuides(snapshot.docs);
     }, err => console.log(err.message));
@@ -54,16 +55,25 @@ signupForm.addEventListener('submit', (e) => {
 
   // sign up the user & add firestore data
   var uid;
+
+  function User(uid) {
+    return ({
+        uid : uid
+    })
+  }
+
   auth.createUserWithEmailAndPassword(email, password).then(cred => {
     db.collection('users').doc(cred.user.uid).set({
+      uid: cred.user.uid,
       bio: signupForm['signup-bio'].value
     });
-    let messageRef = db.collection('users').doc(cred.user.uid)
-    .collection('CalendarEvent').doc().set({
-      nume: "viata e roz"
+     let messageRef = db.collection('users').doc(cred.user.uid)
+     .collection('CalendarEvent').doc().set({
     });
 
     console.log(messageRef);
+
+    firebase.database().ref('users/' + cred.user.uid).set(User(cred.user.uid));
 
   }).then(() => {
     // close the signup modal & reset form
