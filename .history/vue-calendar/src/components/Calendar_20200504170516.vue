@@ -275,7 +275,7 @@ export default {
         this.end = '',
         this.color = ''
       } else {
-        alert('You must enter user name, start, and end time')
+        alert('You must enter event name, start, and end time')
       }
     },
     editEvent (ev) {

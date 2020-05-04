@@ -46,7 +46,7 @@
         <v-card>
           <v-container>
             <v-form @submit.prevent="addEvent">
-              <v-text-field v-model="name" type="text" label="user name (required)"></v-text-field>
+              <v-text-field v-model="username" type="text" label="user name (required)"></v-text-field>
               <v-text-field v-model="details" type="text" label="detail"></v-text-field>
               <v-text-field v-model="start" type="date" label="start (required)"></v-text-field>
               <v-text-field v-model="end" type="date" label="end (required)"></v-text-field>
@@ -63,7 +63,7 @@
         <v-card>
           <v-container>
             <v-form @submit.prevent="addEvent">
-              <v-text-field v-model="name" type="text" label="user name (required)"></v-text-field>
+              <v-text-field v-model="username" type="text" label="user name (required)"></v-text-field>
               <v-text-field v-model="details" type="text" label="detail"></v-text-field>
               <v-text-field v-model="start" type="date" label="start (required)"></v-text-field>
               <v-text-field v-model="end" type="date" label="end (required)"></v-text-field>
@@ -103,7 +103,7 @@
       <v-btn @click="deleteEvent(selectedEvent.id)" icon>
         <v-icon>mdi-delete</v-icon>
       </v-btn>
-      <v-toolbar-title v-html="selectedEvent.name"></v-toolbar-title>
+      <v-toolbar-title v-html="selectedEvent.username"></v-toolbar-title>
       <div class="flex-grow-1"></div>
     </v-toolbar>
 
@@ -275,7 +275,7 @@ export default {
         this.end = '',
         this.color = ''
       } else {
-        alert('You must enter user name, start, and end time')
+        alert('You must enter event name, start, and end time')
       }
     },
     editEvent (ev) {
