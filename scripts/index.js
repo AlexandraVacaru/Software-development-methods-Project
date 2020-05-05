@@ -41,16 +41,20 @@ const setupGuides = (data) => {
       const guide = doc.data();
       const li = `
         <li>
-          <div class="collapsible-header grey lighten-4"> ${guide.title} </div>
+          
+          <div class="collapsible-header deep-purple lighten-4"> ${guide.title} </div>
           <div class="collapsible-body white"> ${guide.content} </div>
+          <div class="collapsible-body  indigo lighten-5"> Written by: ${guide.username}
+          <div> Subject: ${guide.subject} </div></div>
         </li>
       `;
       html += li;
     });
     guideList.innerHTML = html
-  } else {
-    guideList.innerHTML = '<h5 class="center-align">Login to view blogs</h5>';
-  }
+  } 
+  // else {
+  //   guideList.innerHTML = '<h5 class="center-align" style="z-index:10;">Login to view blogs</h5>';
+  // }
   
 
 };

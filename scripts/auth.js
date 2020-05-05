@@ -33,7 +33,9 @@ createForm.addEventListener('submit', (e) => {
   e.preventDefault();
   db.collection('guides').add({
     title: createForm.title.value,
-    content: createForm.content.value
+    content: createForm.content.value,
+    username: createForm.username.value,
+    subject: createForm.subject.value
   }).then(() => {
     // close the create modal & reset form
     const modal = document.querySelector('#modal-create');
@@ -68,11 +70,11 @@ signupForm.addEventListener('submit', (e) => {
       uid: cred.user.uid,
       bio: signupForm['signup-bio'].value
     });
-     let messageRef = db.collection('users').doc(cred.user.uid)
-     .collection('CalendarEvent').doc().set({
-    });
+    //  let messageRef = db.collection('users').doc(cred.user.uid)
+    //  .collection('CalendarEvent').doc().set({
+    // });
 
-    console.log(messageRef);
+    // console.log(messageRef);
 
     firebase.database().ref('users/' + cred.user.uid).set(User(cred.user.uid));
 

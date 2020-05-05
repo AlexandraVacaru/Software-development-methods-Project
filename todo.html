@@ -2,8 +2,14 @@
 
 <head>
     <title>To Do List</title>
-    <!--link rel="stylesheet" href="todo.css" type="text/css"-->
+    <link rel="stylesheet" href="css/todo.css" type="text/css"-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Cabin Sketch' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Chilanka' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Sofadi One' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Nova Mono' rel='stylesheet'>
+
+
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
@@ -30,68 +36,34 @@
 
 <body> 
 
+    <button class="back"><a href="index.html">Back</a></button>
+
     <div id="content_container">
         <div id="finish_task_header">
-           <p>Finish Task.</p> 
+           <p>TO DO LIST</p> 
         </div>
 
-        <div id="tast_input_container">
+        <div id="task_input_container">
             <input type="text" placeholder="Enter task" id="input_box"/>
-            <button onclick="addTask()" id="input_button">Add Task</button>
+            <button onclick="addTask()" id="input_button">ADD TASK</button>
         </div>
 
-        <p class="header">Tasks</p>
-        <button onclick="create_unfinished_task();">Show tasks</button>
-        <div class="container">
-            <!--div class="task_container">
-                <div id="task_data">
-                    <p id="task_title" contenteditable="false">Task 1</p>
-                </div>
-                <div id="task_tool">
-                    <button id="task_done_button" onclick="taskDone();"><i class="fa fa-check"></i></button>
-                    <button id="task_edit_button" onclick="taskEdit();"><i class="fa fa-pencil"></i></button>
-                    <button id="task_delete_button" onclick="taskDelete();"><i class="fa fa-trash"></i></button>
-                </div>
-            </!--div>
-            <div class="task_container">
-                <div id="task_data">
-                    <p id="task_title" contenteditable="false">Task 1</p>
-                </div>
-                <div id="task_tool">
-                    <button id="task_done_button" onclick="taskDone();"><i class="fa fa-check"></i></button>
-                    <button id="task_edit_button" onclick="taskEdit();"><i class="fa fa-pencil"></i></button>
-                    <button id="task_delete_button" onclick="taskDelete();"><i class="fa fa-trash"></i></button>
-                </div>
-            </div-->
+        
+        <button onclick="create_unfinished_task();" class="header">Tasks</button>
+        <div class="container">      
         </div>
 
-        <p class="header">Finished Tasks</p>
-        <button onclick="create_finished_task();">Show finished tasks</button>
-        <div class="container">
-            <!--div class="task_container">
-                <div id="task_data">
-                    <p id="task_title" contenteditable="false">Task 1</p>
-                </div>
-            </!--div>
-            <div class="task_container">
-                <div id="task_data">
-                    <p id="task_title" contenteditable="false">Task 1</p>
-                </div>
-            </div-->
+    
+        <button onclick="create_finished_task();" class="header">Finished tasks</button>
+        <div class="container">      
         </div>
 
 
 
     </div>
 
-    <div id="user_div">
-        <p>You're currently not logged in! </p>
-        <a href="index.html" >Login now!</a>
-    </div>
-    <div id="user_logout">
-        <button onclick="logout()">Logout</button>
-    </div>
 
+ 
 </body>
 
 </html>

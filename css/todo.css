@@ -1,0 +1,261 @@
+html{
+    background: url(../img/photo1.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+}
+
+#content_container{
+    background:rgba(0,0,0,0.4);
+    width: 50%;
+    margin: auto;
+    display: inline-block;
+    padding-bottom: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 5%);
+    border-radius: 60px;
+}
+
+#finish_task_header{
+    margin:auto;
+    background-color: gray;
+    color: white;
+    width: 90%;
+    height: 70px;
+    font-size: 60px;
+    font-family: 'Cabin Sketch';
+    text-align: center;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+#task_input_container{
+    background-color: white;
+    margin: 10px auto;
+    height: 120px;
+    width: 90%;
+    margin-bottom: 60px;
+}
+
+#input_box{
+    width: 100%;
+    float: left;
+    height: 50px;
+    background-color: none;
+    border: none;
+    border-bottom: 2px solid #966cda;
+    text-align: center;
+    font-family: 'Chilanka';
+    font-weight: bold;
+    font-size: 15px;
+    border-right:0.2px solid #a366bb;
+    transition: 0.3s;
+}
+
+#input_box:focus{
+    border-bottom: 4px solid #6d09b1;
+    outline: none;
+}
+
+
+#input_button{
+    width: 60%;
+    float:left;
+    margin-left: 20%;
+    margin-top: 20px;
+    background-color: white;
+    font-family: 'Nova Mono';
+    font-weight: bold;
+    font-size: 20px;
+    height: 40px;
+    color: #86186b;
+    cursor:pointer;
+    outline: none;
+    text-align: center;
+    border: 2px solid #750b4b;
+    border-radius: 5px; 
+}
+
+#input_button:hover{
+    background-color: rgb(104, 9, 88);
+    color: white;
+}
+
+#input_button:active{
+    transform: translateY(4px);
+}
+
+
+.header{
+    float: left;
+    margin-left: 5%;
+    background-color: rgb(19, 157, 175);
+    color: white;
+    text-align: center;
+    font-family: 'Chilanka';
+    font-weight: bold;
+    font-size: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: 0px 5px #4d4646;
+    border-radius:2em;
+    box-sizing: border-box;
+    cursor: pointer;
+    border: none;
+    
+}
+.back{
+    float: left;
+    margin-left: 5%;
+    background-color: rgb(19, 157, 175);
+    color: white;
+    text-align: center;
+    font-family: 'Chilanka';
+    font-weight: bold;
+    margin-top:2%;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: 0px 5px #4d4646;
+    border-radius:2em;
+    box-sizing: border-box;
+    cursor: pointer;
+    border: none;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.header:hover{
+    background-color: rgb(16, 124, 128);
+    color: white;
+}
+
+.container{
+    float:left;
+    margin-left: 5%;
+    margin-bottom: 40px;
+    background-color: lightgrey;
+    width: 90%;
+    height: 200px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+.task_container{
+    background-color: white;
+    width: 90%;
+    height: 80px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.task_container:hover{
+    border: 2px solid rgb(107, 191, 212);
+    box-sizing: border-box;
+}
+
+#task_data{
+    display: inline-block;
+    float: left;
+    width: 200px;
+    height: 100%;
+    margin-left: 10px;
+    font-family: 'Sofadi One';
+}
+
+#task_tool{
+    display: inline-block;
+    float: right;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#task_done_button{
+    float: right;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    margin-right: 5px;
+}
+
+#task_done_button:hover{
+    background-color: rgb(148, 31, 95);
+    color: white;
+}
+#task_done_button:active{
+    transform: translateY(4px);
+}
+
+#task_edit_button{
+    float: right;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    margin-right: 5px;
+}
+#task_edit_button:hover{
+    background-color: rgb(149, 219, 228);
+    color: white;
+}
+#task_edit_button:active{
+    transform: translateY(4px);
+}
+
+#task_delete_button{
+    float: right;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    margin-right: 5px;
+}
+
+#task_delete_button:hover{
+    background-color: rgb(75, 5, 141);
+    color: white;
+}
+#task_delete_button:active{
+    transform: translateY(4px);
+}
+
+#task_title{
+    background-color: white;
+    font-family: 'Sofadi One';  
+    font-size: 15px;
+    float: left;
+    width: 100%;
+}

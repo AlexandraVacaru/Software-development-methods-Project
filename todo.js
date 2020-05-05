@@ -214,18 +214,18 @@ function taskDone(task,task_tool){
 }
 
 function taskEdit(task,edit_button){
-    edit_button.style.backgroundColor = "yellow";
+    
     edit_button.setAttribute("onclick","finish_edit(this.parentElement.parentElement,this)");
-
 
     title = task.childNodes[0].childNodes[0];
     title.setAttribute("contenteditable",true);
 }
 function finish_edit(task,edit_button){
-    edit_button.style.backgroundColor = "white";
+   
+    edit_button.style.color = "black";
 
     title = task.childNodes[0].childNodes[0];
-    title.setAttribute("contenteditable",false);
+    title.setAttribute("contenteditable",true);
 
     //change in firebase
 

@@ -3,6 +3,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
   <!-- Compiled and minified CSS -->
   <link rel=”stylesheet” href=”https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -10,44 +11,51 @@
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
   <title>Fitify</title>
 </head>
-<body class="grey lighten-3"">
 
+<body style="background-image: url(img/photo10.jpg);  height: 100%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+  
   <!-- NAVBAR -->
-  <nav class="z-depth-0 grey lighten-4">
+  <nav style="background-color:transparent;">
     <div class="nav-wrapper container">
       <a href="#" class="brand-logo">
-        <img src="img/fitify-logo.png" style="width: 50px; margin-top: 10px; ">
+        <img src="img/fitify-logo.png" style="width: 60px; margin-top: 5px;">
       </a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li class="logged-in" style="display: none;">
-            <a href="#" class="grey-text modal-trigger" data-target="modal-account">Account</a>
+            <a href="#" class="white-text modal-trigger" data-target="modal-account">Account</a>
           </li>
           <li class="logged-in" style="display: none;">
-            <a href="#" class="grey-text" id="logout">Logout</a>
+            <a href="#" class="white-text" id="logout">Logout</a>
           </li>
           <li class="admin" style="display: none;">
-            <a href="#" class="grey-text modal-trigger" data-target="modal-create">Create BlogPost</a>
+            <a href="#" class="white-text modal-trigger" data-target="modal-create">Create BlogPost</a>
           </li>
           <li class="logged-out" style="display: none;">
-            <a href="#" class="grey-text modal-trigger" data-target="modal-login">Login</a>
+            <a href="#" class="black-text modal-trigger" data-target="modal-login">Login</a>
           </li>
           <li class="logged-out" style="display: none;">
-            <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Sign up</a>
+            <a href="#" class="black-text modal-trigger" data-target="modal-signup" >Sign up</a>
           </li>
           <li class="logged-in" style="display: none;">
-            <a href="http://localhost:8080/" class="grey-text" id="logout">CalendarEvent</a>
+            <a href="http://localhost:8081/" class="white-text" id="logout">CalendarEvent</a>
           </li>
           <li class="logged-in" style="display: none;">
-            <a href="todo.html" class="grey-text" id="logout">TODO</a>
+            <a href="todo.html" class="white-text" id="logout">TODO</a>
+          </li>
+          <li>
+            <a href="home.html" class="white-text">Back</a>
           </li>
       </ul>
     </div>
   </nav>
 
+  
+ 
+  
   <!-- ADMIN ACTIONS -->
   <form class="center-align admin-actions admin" style="margin: 40px auto; max-width: 300px; display: none;">
     <input type="email" placeholder="User email" id="admin-email" required />
-    <button class="btn-small yellow darken-2 z-depth-0">Make admin</button>
+    <button class="btn-small purple darken-2 z-depth-0">Make admin</button>
   </form>
 
   <!-- SIGN UP MODAL -->
@@ -67,7 +75,7 @@
           <input type="text" id="signup-bio" required />
           <label for="signup-bio">One Line Description</label>
         </div>
-        <button class="btn yellow darken-2 z-depth-0">Sign up</button>
+        <button class="btn pink darken-2 z-depth-0">Sign up</button>
         <p class="error pink-text center-align"></p>
       </form>
     </div>
@@ -86,7 +94,7 @@
           <input type="password" id="login-password" required />
           <label for="login-password">Your password</label>
         </div>
-        <button class="btn yellow darken-2 z-depth-0">Login</button>
+        <button class="btn purple darken-2 z-depth-0">Login</button>
         <p class="error pink-text center-align"></p>
       </form>
     </div>
@@ -106,6 +114,15 @@
       <h4>Create Blog Post</h4><br />
       <form id="create-form">
         <div class="input-field">
+          <input type="text" id="username" required>
+          <label for="username">Username</label>
+        </div>
+        <form id="create-form">
+          <div class="input-field">
+            <input type="text" id="subject" required>
+            <label for="subject">Subject</label>
+          </div>
+        <div class="input-field">
           <input type="text" id="title" required>
           <label for="title">Blog Title</label>
         </div>
@@ -113,7 +130,7 @@
           <textarea id="content" class="materialize-textarea" required></textarea>
           <label for="content">Blog Content</label>
         </div>
-        <button class="btn yellow darken-2 z-depth-0">Create</button>
+        <button class="btn pink darken-2 z-depth-0">Create</button>
       </form>
     </div>
   </div>
