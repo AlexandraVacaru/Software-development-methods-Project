@@ -58,7 +58,6 @@ signupForm.addEventListener('submit', (e) => {
 
   function User(uid) {
     return ({
-      
         uid : uid
     })
   }
