@@ -178,11 +178,11 @@
 
 .container_logo{
     position: absolute;
-    bottom: 2.5%;
-    left: 45%; 
+    bottom: 1%;
+    left: 47%; 
 }
 
 .logo{
-    width: 150px;
+    width: 100px;
     z-index:100;
 }
