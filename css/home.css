@@ -22,8 +22,9 @@
 
 .panel_title {
     font-style: italic;
-    font-size: 25px;
-    text-shadow: rgb(183, 0, 255) 1px 1px 15px;
+    font-family: 'Sofadi One';
+    font-size: 27px;
+    text-shadow: rgb(183, 0, 255) 1px 1px 7px;
 }
 
 .panel_text {
@@ -91,7 +92,8 @@
 
 .instr_info {
     color: white;
-    font-family: Overpass;
+    font-family: 'Contrail One';
+    font-size: 17px;  
 }
 
 .instr_info:nth-child(1),
@@ -129,9 +131,16 @@
     padding: 7px;
 }
 
+.instr_type{
+    font-family: 'Contrail One';
+    font-style: italic;
+    letter-spacing: 0.1em;
+}
+
 .instr_name {
-    font-size: 25px;
-    text-shadow: rgb(183, 0, 255) 1px 1px 15px;
+    font-size: 23px;
+    font-family: 'Comfortaa';
+    text-shadow: rgb(40, 225, 231) 1px 1px 7px;
 }
 
 #get_started_button {
@@ -150,7 +159,11 @@
     font-size: 50px;
     font-style: italic;
     font-family: Satisfy;
-    text-shadow: rgb(0, 0, 0) 1px 1px 15px;
+    text-shadow: rgb(214, 29, 137) 1px 1px 13px;
+}
+#get_started_button a:hover{
+    color: rgb(209, 43, 132);
+    text-shadow: white 1px 1px 5px;
 }
 
 .cursor {
@@ -160,5 +173,16 @@
     transform: translateX(-50%);
     color: white;
     font-size: 26px;
-    text-shadow: rgb(0, 0, 0) 1px 1px 15px;
+    text-shadow: rgb(214, 29, 137) 1px 1px 15px;
+}
+
+.container_logo{
+    position: absolute;
+    bottom: 2.5%;
+    left: 45%; 
+}
+
+.logo{
+    width: 150px;
+    z-index:100;
 }
