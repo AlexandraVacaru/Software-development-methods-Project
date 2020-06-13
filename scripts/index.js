@@ -42,19 +42,29 @@ const setupGuides = (data) => {
       const li = `
         <li>
           
-          <div class="collapsible-header deep-purple lighten-4"> ${guide.title} </div>
-          <div class="collapsible-body white"> ${guide.content} </div>
-          <div class="collapsible-body  indigo lighten-5"> Written by: ${guide.username}
-          <div> Subject: ${guide.subject} </div></div>
+          <div class="collapsible-header indigo lighten-4" style="color:#5B08B6;font-family: 'ABeeZee'; font-size:18px;"> ➼ ${guide.title} </div>
+          <div class="collapsible-body grey lighten-5" style="color:#5B2C6F;font-family: 'Architects Daughter';font-size: 18px;"> ${guide.content} </div>
+          <div class="collapsible-body  indigo lighten-5" style="color:#249CCA;font-size:19px;font-family:'Caveat';"> 
+          Written by: ${guide.username}
+          <div> Subject: ${guide.subject} </div>
+                        </div>
         </li>
       `;
       html += li;
     });
     guideList.innerHTML = html
-  } 
-  // else {
-  //   guideList.innerHTML = '<h5 class="center-align" style="z-index:10;">Login to view blogs</h5>';
-  // }
+  }
+  else {
+      guideList.innerHTML = `<div class="center-align" 
+                          style="padding-top:200px;
+                          color:white;
+                          font-size:80px;
+                          font-family: Satisfy;
+                          text-shadow: DarkOrchid 2px 1px 13px;"> 
+                            Login to view our blogs!
+                            </div>`;
+    }
+   
   
 
 };

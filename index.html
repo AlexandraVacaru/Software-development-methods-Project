@@ -3,13 +3,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href='https://fonts.googleapis.com/css?family=Alata' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass&family=Satisfy&display=swap" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Architects Daughter' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Caveat' rel='stylesheet'>
 
   <!-- Compiled and minified CSS -->
   <link rel=”stylesheet” href=”https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
-  <title>Fitify</title>
+  <title>Fitify • Blog</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="img/fitify-logo.png">
 </head>
 
 <body style="background-image: url(img/photo10.jpg);  height: 100%; background-position: center; background-repeat: no-repeat; background-size: cover;">
@@ -17,10 +23,10 @@
   <!-- NAVBAR -->
   <nav style="background-color:transparent;">
     <div class="nav-wrapper container">
-      <a href="#" class="brand-logo">
+      <a href="home.html" class="brand-logo">
         <img src="img/fitify-logo.png" style="width: 60px; margin-top: 5px;">
       </a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <ul id="nav-mobile" class="right hide-on-med-and-down" style="font-family:'Architects Daughter';">
           <li class="logged-in" style="display: none;">
             <a href="#" class="white-text modal-trigger" data-target="modal-account">Account</a>
           </li>
@@ -31,10 +37,10 @@
             <a href="#" class="white-text modal-trigger" data-target="modal-create">Create BlogPost</a>
           </li>
           <li class="logged-out" style="display: none;">
-            <a href="#" class="black-text modal-trigger" data-target="modal-login">Login</a>
+            <a href="#" class="white-text modal-trigger" data-target="modal-login">Login</a>
           </li>
           <li class="logged-out" style="display: none;">
-            <a href="#" class="black-text modal-trigger" data-target="modal-signup" >Sign up</a>
+            <a href="#" class="white-text modal-trigger" data-target="modal-signup" >Sign up</a>
           </li>
           <li class="logged-in" style="display: none;">
             <a href="http://localhost:8081/" class="white-text" id="logout">CalendarEvent</a>
@@ -42,9 +48,10 @@
           <li class="logged-in" style="display: none;">
             <a href="todo.html" class="white-text" id="logout">TODO</a>
           </li>
-          <li>
-            <a href="home.html" class="white-text">Back</a>
+          <li class="logged-in" style="display: none;">
+            <a href="contact.html" class="white-text modal-trigger" id="logout">Contact</a>
           </li>
+          
       </ul>
     </div>
   </nav>
